@@ -4,10 +4,9 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-from prompt import PROMPT  # Make sure this imports your ChatPromptTemplate (see below for an example)
-# EXAMPLE_PROMPT is not needed unless you want to format source snippets separately
+from prompt import PROMPT  # Make sure this imports your ChatPromptTemplate 
 
-from langchain_unstructured import UnstructuredLoader         # CORRECT for docx, txt, etc.
+from langchain_unstructured import UnstructuredLoader        
 from langchain_community.document_loaders import PyPDFLoader # For PDF files
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
@@ -108,18 +107,6 @@ def generate_answer(query):
 
     return answer, sources_docs
 
-# ---------- PROMPT Example (prompt.py) ----------
-# In prompt.py, you should have something like:
-#
-# from langchain_core.prompts import ChatPromptTemplate
-# PROMPT = ChatPromptTemplate.from_messages([
-#     ("system", 
-#      "Use the given context to answer the question. "
-#      "If you don't know the answer, say you don't know. "
-#      "Limit your answer to three sentences.\n\nContext:\n{context}"),
-#     ("human", "{input}")
-# ])
-
 # ---------- MAIN TEST -----------
 if __name__ == "__main__":
     local_files = [
@@ -134,6 +121,7 @@ if __name__ == "__main__":
     answer, sources = generate_answer(question)
     print(f"\nAnswer: {answer}")
     print(f"Sources: {sources}")
+
 
 
 
