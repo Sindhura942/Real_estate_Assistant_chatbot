@@ -110,7 +110,7 @@ def generate_answer(query):
 # ---------- MAIN TEST -----------
 if __name__ == "__main__":
     local_files = [
-        r"C:\Users\prasa\Downloads\Realtor_Housing_Forecast_2025.docx",
+        "Realtor_Housing_Forecast_2025.docx",
         # Add more local docx/txt/pdf/etc paths as needed
     ]
     process_documents(local_files)
@@ -121,6 +121,7 @@ if __name__ == "__main__":
     answer, sources = generate_answer(question)
     print(f"\nAnswer: {answer}")
     print(f"Sources: {sources}")
+
 
 
 
